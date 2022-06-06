@@ -501,14 +501,14 @@ def ENet(inputs,
                 # for i in range(2, max(stage_two_repeat, 2) + 2):
                 for i in range(2, stage_two_repeat + 2):
                     net = bottleneck(net, output_depth=80, filter_size=3, scope='bottleneck' + str(i) + '_1')
-                    net = bottleneck(net, output_depth=80, filter_size=3, dilated=True, dilation_rate=2,
+                    net = bottleneck(net, output_depth=80, filter_size=3, dilated=True, dilation_rate=1,
                                      scope='bottleneck' + str(i) + '_2')
                     net = bottleneck(net, output_depth=80, filter_size=3, asymmetric=False,
                                      scope='bottleneck' + str(i) + '_3')
-                    net = bottleneck(net, output_depth=80, filter_size=3, dilated=True, dilation_rate=4,
+                    net = bottleneck(net, output_depth=80, filter_size=3, dilated=True, dilation_rate=1,
                                      scope='bottleneck' + str(i) + '_4')
                     net = bottleneck(net, output_depth=80, filter_size=3, scope='bottleneck' + str(i) + '_5')
-                    net = bottleneck(net, output_depth=80, filter_size=3, dilated=True, dilation_rate=4,
+                    net = bottleneck(net, output_depth=80, filter_size=3, dilated=True, dilation_rate=1,
                                      scope='bottleneck' + str(i) + '_6')
                     # net = bottleneck(net, output_depth=80, filter_size=3, asymmetric=False, scope='bottleneck'+str(i)+'_7')
                     # net = bottleneck(net, output_depth=80, filter_size=3, dilated=True, dilation_rate=4, scope='bottleneck'+str(i)+'_8')

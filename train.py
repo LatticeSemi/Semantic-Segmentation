@@ -10,7 +10,8 @@ from tensorflow.python.platform import tf_logging as logging
 from enet import ENet, ENet_arg_scope
 from get_class_weights import ENet_weighing, median_frequency_balancing
 from preprocessing import preprocess
-
+os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"   # see issue #152
+os.environ["CUDA_VISIBLE_DEVICES"]="0"
 slim = tf.contrib.slim
 
 # ==============INPUT ARGUMENTS==================
